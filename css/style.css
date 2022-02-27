@@ -1,0 +1,604 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #e98b2c;
+  --dark-light: #32323a;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--dark-light);
+}
+input {
+  margin-top: 0.5rem !important;
+}
+ul {
+  list-style: none;
+  font-weight: 500;
+}
+.main {
+  background-color: #32323a;
+}
+
+/* ================= CSS CLASS ================= */
+.container {
+  max-width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* ================= HOME ================= */
+.home__container {
+  padding-top: 1.5rem;
+  row-gap: 1.5rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__title {
+  font-family: "Bangers", "cursive";
+  color: var(--main-color);
+  font-size: 4.5rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+/* ================= CLIMA ================= */
+.weather__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.weather__container ul {
+  margin-top: 1rem;
+}
+
+.weather__container ul li {
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* ================= MODAL ================= */
+.modal__wins {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1055;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #111111bd;
+  display: none;
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__defeat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1055;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #111111bd;
+  display: none;
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1055;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #111111bd;
+  display: none;
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  display: flex;
+}
+
+.modal__container {
+  margin: auto;
+  width: 70%;
+  max-width: 600;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 2em 1.5em;
+  display: block;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+
+.modal__title {
+  font-size: 2.5rem;
+}
+
+.modal__paragraph {
+  margin-bottom: 10px;
+}
+
+.modal__img {
+  width: 20%;
+  max-width: 300;
+}
+
+.modal__close {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f26250;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__close:hover {
+  color: #f26250;
+  background-color: #fff;
+}
+
+.modal__reset {
+  text-decoration: none;
+  color: #fff;
+  background-color: #3ca1db;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__reset:hover {
+  color: #3ca1db;
+  background-color: #fff;
+}
+
+.modal__continue {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f0c815;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__continue:hover {
+  color: #f0c815;
+  background-color: #fff;
+}
+
+/* ================= BOARDS ================= */
+.boards__description {
+  row-gap: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.boards__data {
+  text-align: center;
+}
+
+.rows__container {
+  display: flex;
+  justify-content: center;
+}
+
+.boards__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.board__player {
+  display: flex;
+  justify-content: end;
+}
+
+.board__computer {
+  display: flex;
+  justify-content: start;
+}
+
+.batlleship-grid {
+  margin: 2vmin;
+  display: grid;
+  background-color: hsl(200, 100%, 50%);
+}
+
+.batlleship-grid div {
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.board-computer > .taken {
+  background-color: hsl(200, 100%, 50%) !important;
+  border-radius: 0 !important;
+}
+
+.board-player {
+  display: grid;
+  border: 10px solid lightslategrey;
+  grid-template-rows: repeat(10, 6.6vmin);
+  grid-template-columns: repeat(10, 6.6vmin);
+}
+
+.board-computer {
+  display: grid;
+  border: 10px solid lightslategrey;
+  grid-template-rows: repeat(10, 6.6vmin);
+  grid-template-columns: repeat(10, 6.6vmin);
+  opacity: 0;
+}
+
+.column-player {
+  display: grid;
+  align-items: end;
+  color: var(--white);
+  grid-template-columns: 6.6vmin;
+  grid-template-rows: repeat(10, 7vmin);
+  opacity: 0;
+}
+
+.column-computer {
+  display: grid;
+  align-items: end;
+  color: var(--white);
+  grid-template-columns: 6.6vmin;
+  grid-template-rows: repeat(10, 7vmin);
+  opacity: 0;
+}
+
+.rows-player {
+  display: grid;
+  align-items: center;
+  text-align: end;
+  color: var(--white);
+  grid-template-columns: repeat(10, 7vmin);
+  grid-template-rows: 6.6vmin;
+  opacity: 0;
+  margin-right: 2rem;
+}
+
+.rows-computer {
+  display: grid;
+  align-items: center;
+  text-align: end;
+  color: var(--white);
+  grid-template-columns: repeat(10, 7vmin);
+  grid-template-rows: 6.6vmin;
+  opacity: 0;
+  margin-left: 2rem;
+}
+
+/* ================= GIVING ================= */
+.navy__fleet__container {
+  display: block;
+}
+.navy__fleet__content {
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= BUTTONS ================= */
+.btn-container {
+  display: block;
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: var(--main-color);
+  padding: 9px 25px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--white);
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0 15px 15px 0;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--white);
+  transform: translate(4px, 4px);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .btn:hover::before {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* ================= SHOTING ================= */
+.box-coordinates.active {
+  display: grid;
+  grid-template-rows: repeat(3, 45px);
+  row-gap: 0.5rem;
+}
+.box-coordinates.hidden {
+  display: none;
+}
+
+/* ================= SHIPS CONTAINER ================= */
+.container-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.container-ships {
+  display: flex;
+  justify-content: center;
+}
+
+.taken,
+.ship {
+  position: relative;
+  background-color: hsl(0, 0%, 80%);
+}
+
+.ship > div {
+  width: 5.6vmin;
+  height: 5.6vmin;
+}
+
+.ship {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vmin;
+  width: calc(5.6vmin * var(--width, 1));
+  height: calc(5.6vmin * var(--height, 1));
+  border-radius: 2.3vmin;
+}
+
+.taken.start.vertical,
+.taken.start.vertical::before {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.taken.end.vertical,
+.taken.end.vertical::before {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.taken.start.horizontal,
+.taken.start.horizontal::before {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.taken.end.horizontal,
+.taken.end.horizontal::before {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.taken.vertical::before,
+.taken.horizontal::before {
+  content: "";
+  position: absolute;
+  border: 0.3vmin solid white;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+}
+
+.taken.horizontal::before {
+  animation: olasY 3s linear infinite;
+  border-left: none;
+  border-right: none;
+}
+
+.taken.vertical::before {
+  animation: olasX 3s linear infinite;
+  border-top: none;
+  border-bottom: none;
+}
+
+@keyframes olasY {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes olasX {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1.5);
+  }
+}
+
+.info__data {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.info__data h3 {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+/* ================= SHIPS PLAYER ================= */
+.boat-container {
+  --width: 2;
+}
+.boat-container-vertical {
+  --height: 2;
+  --width: 1;
+}
+.submarine-container {
+  --width: 3;
+}
+.submarine-container-vertical {
+  --height: 3;
+  --width: 1;
+}
+.escort-ship-container {
+  --width: 3;
+}
+.escort-ship-container-vertical {
+  --height: 3;
+  --width: 1;
+}
+.destroyer-container {
+  --width: 4;
+}
+.destroyer-container-vertical {
+  --height: 4;
+  --width: 1;
+}
+.aircraft-carrier-container {
+  --width: 5;
+}
+.aircraft-carrier-container-vertical {
+  --height: 5;
+  --width: 1;
+}
+
+/* ================= SHOTTING ================= */
+.miss,
+.boom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boom::after,
+.miss::after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  width: 2vmin;
+  height: 2vmin;
+}
+
+.miss::after {
+  background-color: var(--white);
+}
+
+.boom::after {
+  background-color: red;
+}
+
+.boom {
+  animation: boom 0.2s ease-out forwards;
+}
+
+@keyframes hit {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+@keyframes boom {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: hsl(0, 0%, 80%);
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  overflow: hidden;
+}
+.footer__container {
+  position: relative;
+  row-gap: 2rem;
+}
+.footer__copy {
+  display: block;
+  margin: 3.5rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--white);
+}

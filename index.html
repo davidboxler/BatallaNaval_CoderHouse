@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Proyecto Final</title>
+  </head>
+  <body>
+    <!--====================== MAIN ===========================-->
+    <main class="main">
+      <!--====================== HOME ===========================-->
+      <section class="home" id="home">
+        <div class="home__container container">
+          <div class="home__data">
+            <h1 class="home__title">Bienvenido a la Batalla Naval</h1>
+          </div>
+        </div>
+      </section>
+
+      <!--====================== WEATHER ===========================-->
+      <section class="weather section container">
+        <div class="weather__container">
+          <ul id="weather_col_1"></ul>
+          <ul id="weather_col_2"></ul>
+          <ul id="weather_col_3"></ul>
+          <ul id="weather_col_4"></ul>
+        </div>
+      </section>
+
+      <!--====================== BOARDS ===========================-->
+      <section class="boards section container">
+        <div class="boards__data">
+          <div class="rows__container">
+            <div class="rows-player"></div>
+            <div class="rows-computer"></div>
+          </div>
+          <div class="boards__container">
+            <div class="board__player">
+              <div class="column-player"></div>
+              <div class="batlleship-grid board-player"></div>
+            </div>
+            <div class="board__computer">
+              <div class="column-computer"></div>
+              <div class="batlleship-grid board-computer"></div>
+            </div>
+          </div>
+        </div>
+        <button id="rotate" type="button" class="btn">Rotar barcos</button>
+        <button id="game" type="button" class="btn">Jugar</button>
+      </section>
+
+      <!--====================== INFO TURN ===========================-->
+      <section class="info" id="info">
+        <div class="info__container container">
+          <div class="info__data">
+            <h3 id="info__title"></h3>
+            <h3 id="info__span"></h3>
+          </div>
+        </div>
+      </section>
+
+      <!--====================== SHIPS ===========================-->
+      <div class="container">
+        <div class="container-ships" id="ships">
+          <div class="ship boat-container" draggable="true">
+            <div id="boat-0"></div>
+            <div id="boat-1"></div>
+          </div>
+          <div class="ship submarine-container" draggable="true">
+            <div id="submarine-0"></div>
+            <div id="submarine-1"></div>
+            <div id="submarine-2"></div>
+          </div>
+          <div class="ship escort-ship-container" draggable="true">
+            <div id="escort-ship-0"></div>
+            <div id="escort-ship-1"></div>
+            <div id="escort-ship-2"></div>
+          </div>
+          <div class="ship destroyer-container" draggable="true">
+            <div id="destroyer-0"></div>
+            <div id="destroyer-1"></div>
+            <div id="destroyer-2"></div>
+            <div id="destroyer-3"></div>
+          </div>
+          <div class="ship aircraft-carrier-container" draggable="true">
+            <div id="aircraft-carrier-0"></div>
+            <div id="aircraft-carrier-1"></div>
+            <div id="aircraft-carrier-2"></div>
+            <div id="aircraft-carrier-3"></div>
+            <div id="aircraft-carrier-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!--====================== MODALS ===========================-->
+      <section class="modal__wins">
+        <div class="modal__container">
+          <img src="img/cup.svg" class="modal__img" alt="cup_victory" />
+          <h2 class="modal__title">¡Felicitaciones tu Ganas!</h2>
+          <p class="modal_paragraph">
+            ¡Has logrado hundir todos los barcos del enemigo, eres un gran
+            Capitán!
+          </p>
+          <a href="#" class="modal__close">Jugar otra vez</a>
+        </div>
+      </section>
+
+      <section class="modal__defeat">
+        <div class="modal__container">
+          <img src="img/defeat.svg" class="modal__img" alt="cup_defeat" />
+          <h2 class="modal__title">¡La Computadora Gana, Lo siento!</h2>
+          <p class="modal_paragraph">
+            ¡El rival a logrado hundir tu flota, intentalo de nuevo!
+          </p>
+          <a href="#" class="modal__reset">Jugar otra vez</a>
+        </div>
+      </section>
+
+      <section class="modal__info">
+        <div class="modal__container">
+          <img src="img/stop.svg" class="modal__img" alt="icon_info" />
+          <h2 class="modal__title">¡Aún tienes barcos en tu flota!</h2>
+          <a href="#ships" class="modal__continue">Volver</a>
+        </div>
+      </section>
+    </main>
+    <!--====================== FOOTER ===========================-->
+    <footer class="footer section">
+      <div class="footer__container container grid"></div>
+      <span class="footer__copy">&#169; Mr. Glasses. All rigths reserved</span>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/howler.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

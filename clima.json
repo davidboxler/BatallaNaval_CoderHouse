@@ -1,0 +1,72 @@
+[
+    {
+        "fecha": "Lunes",
+        "direccionViento": "NO",
+        "direccionOlas": "SE",
+        "nubosidad": "parcial",
+        "temperatura": "20°C",
+        "alturaOlas": "1.6m",
+        "intervaloDeOlas": "13",
+        "alturaMareas": "1.2"
+    },
+    {
+        "fecha": "Martes",
+        "direccionViento": "SO",
+        "direccionOlas": "S",
+        "nubosidad": "variable",
+        "temperatura": "18°C",
+        "alturaOlas": "1.5m",
+        "intervaloDeOlas": "11",
+        "alturaMareas": "1.1"
+    },
+    {
+        "fecha": "Miércoles",
+        "direccionViento": "NO",
+        "direccionOlas": "S",
+        "nubosidad": "alta",
+        "temperatura": "21°C",
+        "alturaOlas": "1.2m",
+        "intervaloDeOlas": "15",
+        "alturaMareas": "1.5"
+    },
+    {
+        "fecha": "Jueves",
+        "direccionViento": "E",
+        "direccionOlas": "SE",
+        "nubosidad": "media",
+        "temperatura": "22°C",
+        "alturaOlas": "1.1m",
+        "intervaloDeOlas": "16",
+        "alturaMareas": "1"
+    },
+    {
+        "fecha": "Viernes",
+        "direccionViento": "O",
+        "direccionOlas": "N",
+        "nubosidad": "despejado",
+        "temperatura": "25°C",
+        "alturaOlas": "1.3m",
+        "intervaloDeOlas": "10",
+        "alturaMareas": "0.7"
+    },
+    {
+        "fecha": "Sabado",
+        "direccionViento": "NO",
+        "direccionOlas": "S",
+        "nubosidad": "parcial",
+        "temperatura": "17°C",
+        "alturaOlas": "1.2m",
+        "intervaloDeOlas": "15",
+        "alturaMareas": "0.9"
+    },
+    {
+        "fecha": "Domingo",
+        "direccionViento": "E",
+        "direccionOlas": "NO",
+        "nubosidad": "variable",
+        "temperatura": "19°C",
+        "alturaOlas": "1.1m",
+        "intervaloDeOlas": "16",
+        "alturaMareas": "0.8"
+    }
+]
