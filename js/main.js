@@ -4,7 +4,7 @@ $(document).ready(() => {
     volume: 0.2,
     loop: true,
   });
-  // sound.play();
+  sound.play();
 });
 /*=============== VARIABLES ===============*/
 
