@@ -4,7 +4,7 @@ $(document).ready(() => {
     volume: 0.2,
     loop: true,
   });
-  sound.play();
+  // sound.play();
 });
 /*=============== VARIABLES ===============*/
 
@@ -382,31 +382,159 @@ function dragDrop() {
 
   shipLastId = shipLastId - selectedShipIndex;
 
-  let pruebaH = parseInt(this.dataset.id) - selectedShipIndex + 0;
-  let pruebaH1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
-  let pruebaH2 = parseInt(this.dataset.id) - selectedShipIndex + 2;
-  let pruebaH3 = parseInt(this.dataset.id) - selectedShipIndex + 3;
-  let pruebaH4 = parseInt(this.dataset.id) - selectedShipIndex + 4;
-  
-  userSquares[pruebaH].classList.contains("taken") ? pruebaH = true : pruebaH = false;
-  userSquares[pruebaH1].classList.contains("taken") ? pruebaH1 = true : pruebaH1 = false;
-  userSquares[pruebaH2].classList.contains("taken") ? pruebaH2 = true : pruebaH2 = false;
-  userSquares[pruebaH3].classList.contains("taken") ? pruebaH3 = true : pruebaH3 = false;
-  userSquares[pruebaH4].classList.contains("taken") ? pruebaH4 = true : pruebaH4 = false;
+  let positionBoatHorizontal = false; 
+  let positionEscortHorizontal = false;
+  let positionSubmarineHorizontal = false;
+  let positionDestroyerHorizontal = false;
+  let positionAircraftCarrierHorizontal = false;
 
-  let pruebaV = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
-  let pruebaV1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
-  let pruebaV2 = parseInt(this.dataset.id) - selectedShipIndex + width * 2;
-  let pruebaV3 = parseInt(this.dataset.id) - selectedShipIndex + width * 3;
-  let pruebaV4 = parseInt(this.dataset.id) - selectedShipIndex + width * 4;
+  if (arrastrarBarcoLength == 2 && horizontal) {
+    let parteBarcoHorizontal = parseInt(this.dataset.id) - selectedShipIndex + 0;
+    let parteBarcoHorizontal1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoHorizontal].classList.contains("taken") ||
+      userSquares[parteBarcoHorizontal1].classList.contains("taken")
+    ) {
+      positionBoatHorizontal = true;
+    }
+  } else if (arrastrarBarcoLength == 3 && horizontal) {
+    let parteBarcoHorizontal = parseInt(this.dataset.id) - selectedShipIndex + 0;
+    let parteBarcoHorizontal1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
+    let parteBarcoHorizontal2 = parseInt(this.dataset.id) - selectedShipIndex + 2;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoHorizontal].classList.contains("taken", "escort-ship") ||
+      userSquares[parteBarcoHorizontal1].classList.contains("taken", "escort-ship") ||
+      userSquares[parteBarcoHorizontal2].classList.contains("taken", "escort-ship")
+    ) {
+      positionEscortHorizontal = true;
+    }
+  } else if (arrastrarBarcoLength == 3 && horizontal) {
+    let parteBarcoHorizontal = parseInt(this.dataset.id) - selectedShipIndex + 0;
+    let parteBarcoHorizontal1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
+    let parteBarcoHorizontal2 = parseInt(this.dataset.id) - selectedShipIndex + 2;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoHorizontal].classList.contains("taken", "submarine") ||
+      userSquares[parteBarcoHorizontal1].classList.contains("taken", "submarine") ||
+      userSquares[parteBarcoHorizontal2].classList.contains("taken", "submarine")
+    ) {
+      positionSubmarineHorizontal = true;
+    }
+  } else if (arrastrarBarcoLength == 4 && horizontal) {
+    let parteBarcoHorizontal = parseInt(this.dataset.id) - selectedShipIndex + 0;
+    let parteBarcoHorizontal1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
+    let parteBarcoHorizontal2 = parseInt(this.dataset.id) - selectedShipIndex + 2;
+    let parteBarcoHorizontal3 = parseInt(this.dataset.id) - selectedShipIndex + 3;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoHorizontal].classList.contains("taken") ||
+      userSquares[parteBarcoHorizontal1].classList.contains("taken") ||
+      userSquares[parteBarcoHorizontal2].classList.contains("taken")  ||
+      userSquares[parteBarcoHorizontal3].classList.contains("taken")
+    ) {
+      positionDestroyerHorizontal = true;
+    }
+  } else if (arrastrarBarcoLength == 5 && horizontal) {
+    let parteBarcoHorizontal = parseInt(this.dataset.id) - selectedShipIndex + 0;
+    let parteBarcoHorizontal1 = parseInt(this.dataset.id) - selectedShipIndex + 1;
+    let parteBarcoHorizontal2 = parseInt(this.dataset.id) - selectedShipIndex + 2;
+    let parteBarcoHorizontal3 = parseInt(this.dataset.id) - selectedShipIndex + 3;
+    let parteBarcoHorizontal4 = parseInt(this.dataset.id) - selectedShipIndex + 4;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoHorizontal].classList.contains("taken") ||
+      userSquares[parteBarcoHorizontal1].classList.contains("taken") ||
+      userSquares[parteBarcoHorizontal2].classList.contains("taken")  ||
+      userSquares[parteBarcoHorizontal3].classList.contains("taken")  ||
+      userSquares[parteBarcoHorizontal4].classList.contains("taken")
+    ) {
+      positionAircraftCarrierHorizontal = true;
+    }
+  }
 
-  userSquares[pruebaV].classList.contains("taken") ? pruebaV = true : pruebaV = false;
-  userSquares[pruebaV1].classList.contains("taken") ? pruebaV1 = true : pruebaV1 = false;
-  userSquares[pruebaV2].classList.contains("taken") ? pruebaV2 = true : pruebaV2 = false;
-  userSquares[pruebaV3].classList.contains("taken") ? pruebaV3 = true : pruebaV3 = false;
-  userSquares[pruebaV4].classList.contains("taken") ? pruebaV4 = true : pruebaV4 = false;
-  
-  if (horizontal && !newbordeHorizontal.includes(shipLastId) && !pruebaH && !pruebaH1 && !pruebaH2 && !pruebaH3 && !pruebaH4) {
+  let positionBoatVertical = false; 
+  let positionEscortVertical = false; 
+  let positionSubmarineVertical = false; 
+  let positionDestroyerVertical = false;
+  let positionAircraftCarrierVertical = false; 
+
+  if (arrastrarBarcoLength == 2 && !horizontal) {
+    let parteBarcoVertical = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
+    let parteBarcoVertical1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoVertical].classList.contains("taken") ||
+      userSquares[parteBarcoVertical1].classList.contains("taken")
+    ) {
+      positionBoatVertical = true;
+    }
+  } else if (arrastrarBarcoLength == 3 && !horizontal) {
+    let parteBarcoVertical = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
+    let parteBarcoVertical1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
+    let parteBarcoVertical2 = parseInt(this.dataset.id) - selectedShipIndex + width * 2;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoVertical].classList.contains("taken", "escort-ship") ||
+      userSquares[parteBarcoVertical1].classList.contains("taken", "escort-ship") ||
+      userSquares[parteBarcoVertical2].classList.contains("taken", "escort-ship")
+    ) {
+      positionEscortVertical = true;
+    }
+  } else if (arrastrarBarcoLength == 3 && !horizontal) {
+    let parteBarcoVertical = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
+    let parteBarcoVertical1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
+    let parteBarcoVertical2 = parseInt(this.dataset.id) - selectedShipIndex + width * 2;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoVertical].classList.contains("taken", "submarine") ||
+      userSquares[parteBarcoVertical1].classList.contains("taken", "submarine") ||
+      userSquares[parteBarcoVertical2].classList.contains("taken", "submarine")
+    ) {
+      positionSubmarineVertical = true;
+    }
+  } else if (arrastrarBarcoLength == 4 && !horizontal) {
+    let parteBarcoVertical = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
+    let parteBarcoVertical1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
+    let parteBarcoVertical2 = parseInt(this.dataset.id) - selectedShipIndex + width * 2;
+    let parteBarcoVertical3 = parseInt(this.dataset.id) - selectedShipIndex + width * 3;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoVertical].classList.contains("taken") ||
+      userSquares[parteBarcoVertical1].classList.contains("taken") ||
+      userSquares[parteBarcoVertical2].classList.contains("taken")  ||
+      userSquares[parteBarcoVertical3].classList.contains("taken")
+    ) {
+      positionDestroyerVertical = true;
+    }
+  } else if (arrastrarBarcoLength == 5 && !horizontal) {
+    let parteBarcoVertical = parseInt(this.dataset.id) - selectedShipIndex + width * 0;
+    let parteBarcoVertical1 = parseInt(this.dataset.id) - selectedShipIndex + width * 1;
+    let parteBarcoVertical2 = parseInt(this.dataset.id) - selectedShipIndex + width * 2;
+    let parteBarcoVertical3 = parseInt(this.dataset.id) - selectedShipIndex + width * 3;
+    let parteBarcoVertical4 = parseInt(this.dataset.id) - selectedShipIndex + width * 4;
+    console.log(arrastrarBarcoLength);
+    if (
+      userSquares[parteBarcoVertical].classList.contains("taken") ||
+      userSquares[parteBarcoVertical1].classList.contains("taken") ||
+      userSquares[parteBarcoVertical2].classList.contains("taken")  ||
+      userSquares[parteBarcoVertical3].classList.contains("taken")  ||
+      userSquares[parteBarcoVertical4].classList.contains("taken")
+    ) {
+      positionAircraftCarrierVertical = true;
+    }
+  }
+
+  if (
+    horizontal &&
+    !newbordeHorizontal.includes(shipLastId) &&
+    !positionBoatHorizontal &&
+    !positionEscortHorizontal &&
+    !positionSubmarineHorizontal &&
+    !positionDestroyerHorizontal &&
+    !positionAircraftCarrierHorizontal
+  ) {
     for (let i = 0; i < arrastrarBarcoLength; i++) {
       let directionClass;
       if (i === 0) directionClass = "start";
@@ -415,7 +543,14 @@ function dragDrop() {
         parseInt(this.dataset.id) - selectedShipIndex + i
       ].classList.add("taken", "horizontal", directionClass, shipClass);
     }
-  } else if (!horizontal && !newbordeVertical.includes(shipLastId) && !pruebaV && !pruebaV1 && !pruebaV2 && !pruebaV3 && !pruebaV4) {
+  } else if (
+    !horizontal && !newbordeVertical.includes(shipLastId) &&
+    !positionBoatVertical &&
+    !positionEscortVertical &&
+    !positionSubmarineVertical &&
+    !positionDestroyerVertical &&
+    !positionAircraftCarrierVertical
+  ) {
     for (let i = 0; i < arrastrarBarcoLength; i++) {
       let directionClass;
       if (i === 0) directionClass = "start";
